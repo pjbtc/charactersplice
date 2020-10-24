@@ -6,7 +6,7 @@ import Char from './Char/Char';
 
 class App extends Component {
   state={
-   userInput:''
+   userInput:''  // userInput is object state
   }
 
   inputChangedHandler=(event)=>{
@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   deleteCharHandler=(index)=>{
-    const text =this.state.userInput.split('');
+    const text =this.state.userInput.split('');  // split function is used to divide 
     text.splice(index, 1);
     const updatedText=text.join('');
     this.setState({userInput:updatedText});
@@ -37,7 +37,7 @@ class App extends Component {
     onChange={this.inputChangedHandler}
      value={this.state.userInput}/>
      <p>{this.state.userInput}</p>
-     <Validation inputLength={this.state.userInput.length}/>
+     <Validation inputLength={this.state.userInput.length}/> // inputLength is the length of character of userInput
      {charList}
      </div> 
      
